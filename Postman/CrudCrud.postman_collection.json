@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "6b0e676e-6084-487f-8641-614f21688077",
+		"name": "CrudCrud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post(/unicorns)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\":\"Dolly\", \"age\":3, \"colour\":\"white\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://crudcrud.com/api/952e59aa6675413eadf0a8a9d580ce3b/unicorns",
+					"protocol": "https",
+					"host": [
+						"crudcrud",
+						"com"
+					],
+					"path": [
+						"api",
+						"952e59aa6675413eadf0a8a9d580ce3b",
+						"unicorns"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get(/unicorns)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://crudcrud.com/api/952e59aa6675413eadf0a8a9d580ce3b/unicorns",
+					"protocol": "https",
+					"host": [
+						"crudcrud",
+						"com"
+					],
+					"path": [
+						"api",
+						"952e59aa6675413eadf0a8a9d580ce3b",
+						"unicorns"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete(/unicorns/60bb92bd209ad703e80ffd7a)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://crudcrud.com/api/952e59aa6675413eadf0a8a9d580ce3b/unicorns/60bba863209ad703e80ffd80",
+					"protocol": "https",
+					"host": [
+						"crudcrud",
+						"com"
+					],
+					"path": [
+						"api",
+						"952e59aa6675413eadf0a8a9d580ce3b",
+						"unicorns",
+						"60bba863209ad703e80ffd80"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put(/unicorns/60bb99c2209ad703e80ffd7b)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\":\"Dolly\",\"age\":1,\"colour\":\"white\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://crudcrud.com/api/952e59aa6675413eadf0a8a9d580ce3b/unicorns/60bbab67209ad703e80ffd84",
+					"protocol": "https",
+					"host": [
+						"crudcrud",
+						"com"
+					],
+					"path": [
+						"api",
+						"952e59aa6675413eadf0a8a9d580ce3b",
+						"unicorns",
+						"60bbab67209ad703e80ffd84"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
