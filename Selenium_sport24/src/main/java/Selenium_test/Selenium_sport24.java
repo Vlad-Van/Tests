@@ -7,35 +7,28 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
 public class Selenium_sport24 {
-    public static void main(String[] args) throws InterruptedException {
+
+    public static boolean searcher(String playername) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        String playername = "Сидни Кросби";
 
-        driver.get("https://sport24.ru/");
-        //Нажатие кнопки бокового меню
-        driver.findElement(By.className("_15actI")).click();
-        //Нажатие кнопки "Поиск по сайту"
-        driver.findElement(By.className("_1YAzux")).click();
-        //Создание ссылки на поисковую строку с именем searchbox
-        WebElement searchbox = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div/div[1]/div/div[2]/div/div[1]/input"));
+        driver.get("https://www.sports.ru/");
+        //Создание элемента поисковой строки сайта
+        WebElement searchbox = driver.findElement(By.className("search-block-trigger"));
         searchbox.click();
+        //Ожидание загрузки страницы 2 секунды
+        Thread.sleep(2000);
         //Ввод в поисковую строку имени игрока и нажатие клавиши Enter
-        searchbox.sendKeys(playername + Keys.ENTER);
-        //Установка ожидания длительносью 2с
+        searchbox.sendKeys(" "+playername + Keys.ENTER);
+        //Ожидание загрузки страницы 2 секунды
         Thread.sleep(2000);
         //Поиск контейнера с найденным именем игрока по имени класса
-        WebElement box = driver.findElement(By.className("_3CDElX"));
-        //Передача текста из тега span в переменную playerfound
-        String playerfound = box.findElement(By.tagName("span")).getText();
+        WebElement box = driver.findElement(By.className("overBox"));
+        //Передача текста из тега <a> в переменную playerfound
+        String playerfound = box.findElement(By.tagName("a")).getText();
         driver.quit();
+        //Проверка соответствия между искомым и найденым игроком
+        return playername.equals(playerfound);
 
-        //Проверка соответствия между искомым игроком и найденым, в случае соответствия "Success", в случае несоответствия "Failure"
-        if (playername.equals(playerfound)){
-            System.out.println("Success");
-        }
-        else{
-            System.out.println("Failure");
-        }
     }
 }
